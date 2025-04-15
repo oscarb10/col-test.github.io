@@ -6,40 +6,114 @@
   <title>Oscar's Site</title>
   <style>
     body {
-      font-family: sans-serif;
       margin: 0;
-      padding: 0;
-      background-color: #f5f5f5;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
     }
 
     header {
       background-color: #333;
+      padding: 1em 0;
       color: white;
-      width: 100%;
-      padding: 20px 0;
       text-align: center;
+    }
+
+    nav {
+      background-color: #444;
+      display: flex;
+      justify-content: center;
+      gap: 2em;
+      padding: 0.5em 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
     }
 
     main {
       max-width: 800px;
-      margin-top: 40px;
-      padding: 20px;
+      margin: 2em auto;
+      padding: 1em;
       background: white;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
       border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+    }
+
+    input, textarea {
+      padding: 0.5em;
+      font-size: 1em;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      padding: 0.7em;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
     }
   </style>
 </head>
 <body>
+
   <header>
-    <h1>Welcome to Oscar's Page</h1>
+    <h1>Welcome to Oscar's Site</h1>
   </header>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#form">Contact</a>
+    <a href="#about">About</a>
+  </nav>
+
   <main>
-    <p>This is a real webpage — live on GitHub Pages!</p>
-    <p>You can add images, links, projects, or anything you want right here.</p>
+    <section id="home">
+      <h2>Home</h2>
+      <p>This is the home section of your personal GitHub Pages site.</p>
+    </section>
+
+    <section id="form">
+      <h2>Contact Form</h2>
+      <form>
+        <input type="text" placeholder="Your name" required>
+        <input type="email" placeholder="Your email" required>
+        <textarea placeholder="Your message" rows="5" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </section>
+
+    <section id="about">
+      <h2>About</h2>
+      <p>This is a sample about section. You can customize this to share more about yourself or your project.</p>
+    </section>
   </main>
+
+  <!-- Segment Analytics Snippet -->
+  <script>
+    !function(){var i="analytics",analytics=window[i]=window[i]||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","screen","once","off","on","addSourceMiddleware","addIntegrationMiddleware","setAnonymousId","addDestinationMiddleware","register"];analytics.factory=function(e){return function(){if(window[i].initialized)return window[i][e].apply(window[i],arguments);var n=Array.prototype.slice.call(arguments);if(["track","screen","alias","group","page","identify"].indexOf(e)>-1){var c=document.querySelector("link[rel='canonical']");n.push({__t:"bpc",c:c&&c.getAttribute("href")||void 0,p:location.pathname,u:location.href,s:location.search,t:document.title,r:document.referrer})}n.unshift(e);analytics.push(n);return analytics}};for(var n=0;n<analytics.methods.length;n++){var key=analytics.methods[n];analytics[key]=analytics.factory(key)}analytics.load=function(key,n){var t=document.createElement("script");t.type="text/javascript";t.async=!0;t.setAttribute("data-global-segment-analytics-key",i);t.src="https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js";var r=document.getElementsByTagName("script")[0];r.parentNode.insertBefore(t,r);analytics._loadOptions=n};analytics._writeKey="ZPt0MyGkGJibRiAmOPvzjQUIEKbAf82q";;analytics.SNIPPET_VERSION="5.2.0";
+    analytics.load("ZPt0MyGkGJibRiAmOPvzjQUIEKbAf82q");
+    analytics.page();
+    }}();
+  </script>
+
 </body>
 </html>
